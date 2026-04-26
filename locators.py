@@ -20,7 +20,7 @@ class OrderPageLocators:
     SURNAME_FIELD = (By.XPATH, ".//input[@placeholder='* Фамилия']") #Поле ввода Фамилия
     ADDRESS_FIELD = (By.XPATH, ".//input[@placeholder='* Адрес: куда привезти заказ']") #Поле ввода Адрес
     METRO_FIELD = (By.XPATH, ".//input[@placeholder='* Станция метро']") #Поле ввода Метро
-    PHONE_FILED = (By.XPATH, ".//input[@placeholder='* Телефон: на него позвонит курьер]") #Поле ввода телефона
+    PHONE_FILED = (By.XPATH, ".//input[@placeholder='* Телефон: на него позвонит курьер']") #Поле ввода телефона
     METRO_STATION_OPTION = (By.XPATH, ".//div[@class='select-search__select']//li") #Выбора станции из списка
     NEXT_BUTTON = (By.XPATH, ".//button[text()='Далее']") #Кнопка "Далее"
 
@@ -34,6 +34,8 @@ class OrderPageLocators:
     COMMENT_FIELD = (By.XPATH, ".//input[@placeholder='Комментарий для курьера']") #Поле ввода коментария для курьера
     FINAL_ORDER_BUTTON = (By.XPATH, ".//div[contains(@class, 'Order_Buttons')]//button[text()='Заказать']") #Кнопка "Заказать"
     CONFIRM_YES_BUTTON = (By.XPATH, ".//button[text()='Да']") # Кнопка "Да" в форме подтверждения заказа
+
+    ORDER_SUCCESS_MODAL = (By.XPATH, ".//div[contains(text(), 'Заказ оформлен')]") #Окно успешного оформления заказа
 
 
 class HeaderLocators:

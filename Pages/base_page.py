@@ -10,12 +10,12 @@ class BasePage:
         return self.driver.get(self.base_url)
     
     def click_element(self, locator):
-        WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable(locator)).click()
+        WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(locator)).click()
 
     def enter_text(self, locator, text):
-        element = WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(locator))
+        element = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(locator))
         element.clear()
         element.send_keys(text)
 
     def get_text_from_element(self, locator):
-        return WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(locator)).text
+        return WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(locator)).text
