@@ -19,4 +19,9 @@ class BasePage:
         element.send_keys(text)
 
     def get_text_from_element(self, locator):
-        return WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(locator)).text
+        element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(locator))
+        return element.text
+    
+    def scroll_to_element(self, locator):
+        element = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(locator))
+        self.driver.execute_script("arguments[0].scrollIntoView();", element)

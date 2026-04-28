@@ -1,8 +1,7 @@
 import allure
 from Pages.base_page import BasePage
 from locators import MainPageLocators, HeaderLocators, OrderPageLocators
-from selenium.webdriver.support.wait import WebDriverWait 
-from selenium.webdriver.support import expected_conditions as EC
+
 
 class MainPage(BasePage):
     @allure.step("Принятие куки")
@@ -13,9 +12,7 @@ class MainPage(BasePage):
     def click_to_question(self, question_text):
         method, locator = MainPageLocators.QUESTION_LOCATOR
         formatted_locator = (method, locator.format(question_text))
-        element = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(formatted_locator))
-        self.driver.execute_script("arguments[0].scrollIntoView();", element)
-        element = WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(formatted_locator))
+        self.scroll_to_element(formatted_locator)
         self.click_element(formatted_locator)
 
     @allure.step("Получение текста ответа для вопроса")
